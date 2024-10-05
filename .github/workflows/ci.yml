@@ -41,17 +41,6 @@ jobs:
     - name: Run tests
       run: |
         robot -d results --log index.html TestCases 
-
-    - name: Upload GitHub Pages content
-      uses: actions/upload-artifact@v4
-      with:
-        name: github-pages
-        path: ./results/index.html  
-          
-    - name: deploy to Github Pages
-      uses: actions/deploy-pages@v4
-      id: deployment        
-
     - name: Report results
       if: success() || failure() 
       run: |

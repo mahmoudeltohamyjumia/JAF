@@ -1,5 +1,6 @@
 *** Settings ***
-Documentation     List All clients
+Documentation     test suite
+Force Tags          BID-REQ-002
 Resource    ../../../Resources/common.robot
 Variables        ../../../Data/Config/live.yml
 

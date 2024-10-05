@@ -6,6 +6,7 @@ Library         BuiltIn
 Library         RequestsLibrary
 Library         OperatingSystem
 Library         FakerLibrary
+Library         SeleniumLibrary    timeout=60
 Library         String
 Library         json
 Library         JSONLibrary
@@ -14,7 +15,7 @@ Library         Libs/SchemaLibrary.py    Resources/schemas/
 Library         Libs/CustomKeywords.py
 Variables       apischema.yaml
 Variables        ../Data/Config/live.yml
-
+Resource        PO/record.robot
 *** Variables ***
 ${BASE_URL}                 https://api-vcs-staging.jumia.services/api/v2
 ${GLOBALTIMEOUT}            200 ms

@@ -6,3 +6,5 @@ output.xml
 report.html
 *.pyc
 interactive_console_output.xml
+*.log
+*.webm
