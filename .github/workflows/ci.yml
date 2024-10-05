@@ -13,11 +13,20 @@ permissions:
   id-token: write
   pages: write
 
+
+
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+
+    environment:
+      # environment created automatically by GitHub
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.12
