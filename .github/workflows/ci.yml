@@ -32,13 +32,13 @@ jobs:
     - name: Run tests
       run: |
         robot -d results --log index.html TestCases 
-    - name: Store Artifact
-      uses: actions/upload-artifact@v4
-      if: success() || failure() 
-      with:
-        name: test-results
-        path: |
-          results
+    # - name: Store Artifact
+    #   uses: actions/upload-artifact@v4
+    #   if: success() || failure() 
+    #   with:
+    #     name: test-results
+    #     path: |
+    #       results
 
     - name: Upload GitHub Pages content
       uses: actions/upload-artifact@v4
