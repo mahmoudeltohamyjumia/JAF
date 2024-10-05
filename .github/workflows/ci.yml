@@ -40,3 +40,23 @@ jobs:
       run: |
         pip install -r requirements.txt
         python Resources/Libs/GithubReporter.py results/output.xml $GITHUB_STEP_SUMMARY
+
+    - name: Download test-results artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: test-results
+    - name: Extract test-results
+      run: |
+              unzip -q test-results.zip
+    - name: Generate static HTML report
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - run: |
+          npm install -g html-generator
+          html-generator -i test-results/output.xml -o log.html
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v3
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        folder: .        
