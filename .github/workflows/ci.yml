@@ -28,11 +28,6 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        npx playwright install-deps
-        wget https://github.com/allure-framework/allure2/releases/download/2.25.0/allure-2.25.0.tgz
-        tar -xzf allure-2.25.0.tgz
-        rm allure-2.25.0.tgz
-        rfbrowser init
     - name: Test with Robot Framework
       run: |
         robot -d results TestCases
