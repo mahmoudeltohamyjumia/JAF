@@ -4,7 +4,7 @@ Documentation     A test suite with a single test for Jumia | Vendor Center
 Resource     ../../../Resources/common.robot
 
 *** Variables ***
-${BROWSER}    ff
+${BROWSER}    headlessfirefox
 ${SLEEP}    3
 
 
