@@ -1,0 +1,5 @@
+{
+    "Content-Type": "application/json",
+    "Authorization": "Bearer {{Authorization}}",
+    "X_SHOP_SID_LIST": "{{X_SHOP_SID_LIST}}"
+}

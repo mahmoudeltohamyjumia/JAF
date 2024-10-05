@@ -1,0 +1,10 @@
+robotframework-databaselibrary
+robotframework-requests
+robotframework-jsonlibrary
+robotframework-faker
+#robotframework-jsonschemalibrary
+curlify
+Jinja2
+#pyyaml
+setuptools
+PyYAML

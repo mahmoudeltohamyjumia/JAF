@@ -1,0 +1,14 @@
+APIs:
+  OrderDashboard:
+    totalPendingLastSevenDaysUsingGET:
+      action: get
+      bodyTemplate: none.template
+      params: totalPendingLastSevenDaysParams.template
+      headers: totalPendingLastSevenDaysHeaders.template
+      uri: /orders/total-pending-last-seven-days
+
+      Responses:
+        'Pass': totalPendingLastSevenDays.schema.json
+        'Failed': Resources/schemas/genericError.schema.json
+
+
