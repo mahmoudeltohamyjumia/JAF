@@ -7,6 +7,7 @@ Library         RequestsLibrary
 Library         OperatingSystem
 Library         FakerLibrary
 Library         String
+Library         json
 Library         JSONLibrary
 Library         Process
 Library         Libs/SchemaLibrary.py    Resources/schemas/
@@ -74,7 +75,7 @@ Api call
 
     ${headers}    get file    ./Resources/templates/header/${descriptor.headers}
     ${reqheaders}    Render The Template    ${headers}    &{reqparams}
-    ${reqheaders}    To Json    ${reqheaders}
+    ${reqheaders}=    Evaluate    json.loads('${reqheaders}')
     log    ${reqheaders}
 
 

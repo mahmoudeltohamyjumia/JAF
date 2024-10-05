@@ -40,4 +40,4 @@ jobs:
       if: success() || failure() 
       run: |
         pip install -r requirements.txt
-        python Resources/Libs/gha_reporter.py results/output.xml $GITHUB_STEP_SUMMARY
+        python Resources/Libs/GithubReporter.py results/output.xml $GITHUB_STEP_SUMMARY
