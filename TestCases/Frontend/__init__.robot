@@ -1,9 +1,7 @@
 *** Settings ***
 Resource     ../../Resources/common.robot
-# Suite Setup    log    Setup
-# Suite Teardown    log    teardown
-Test Setup     Record Screen
-Test Teardown  Stop Record
+Suite Setup    log    Setup
+Suite Teardown    log    teardown
 
 
 *** Keywords ***

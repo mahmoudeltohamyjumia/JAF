@@ -30,9 +30,6 @@ jobs:
         curl -s -L "$url" | tar -xz
         chmod +x geckodriver
         sudo mv geckodriver "$INSTALL_DIR"
-        sudo apt-get install xvfb
-        xvfb :1 -screen 0 1024x768x24 +fp +vm +ac &
-        export DISPLAY=:1
         echo "installed geckodriver binary in $INSTALL_DIR"
 
     - name: Run tests
