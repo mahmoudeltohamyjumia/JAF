@@ -17,11 +17,11 @@ jobs:
           id: cache
           with:
             path: ~/.cache/pip
-            key: ${{ runner.os }}-pip-${{ hashFiles('**/requirement.txt') }}
+            key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         - name: Install pip dependencies
           run: |
             pip install --upgrade pip
-            pip install -r requirement.txt
+            pip install -r requirements.txt
         - name: Run Test
           run: python -m robot --outputdir results TestCases
         - name: Run Test and create report
