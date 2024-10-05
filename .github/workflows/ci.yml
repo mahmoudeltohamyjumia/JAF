@@ -41,15 +41,7 @@ jobs:
         pip install -r requirements.txt
         python Resources/Libs/GithubReporter.py results/output.xml $GITHUB_STEP_SUMMARY
 
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Setup Pages
-      uses: actions/configure-pages@v5
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: 'results/log.html'
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
-        
+      
+    - name: deploy to Github Pages
+      uses: actions/deploy-pages@v2
+      id: deployment        
