@@ -9,11 +9,11 @@ on:
 
 jobs:
     Run-Test:
-      runs-on: ubuntu-20.04
+      runs-on: ubuntu-latest
       steps:
         - name: Checkout repository
-          uses: actions/checkout@v1
-        - uses: actions/cache@v2
+          uses: actions/checkout@v4
+        - uses: actions/cache@v4
           id: cache
           with:
             path: ~/.cache/pip
@@ -29,13 +29,12 @@ jobs:
         - name: Run Robot Framework tests and generate report
           run: |
              echo "ROBOT_RC=$?" >> "$GITHUB_ENV"  
-        # - name: If Auto Test Pass Rate Not 100%, Job Will Fail
-        #   if: env.ROBOT_RC != '0'
-        #   run: |
-        #     echo "Auto Test Pass Rate Not 100%, Please Check Test Result"
-        #     exit 1
+              if: env.ROBOT_RC != '0'
+              run: |
+                echo "Auto Test Pass Rate Not 100%, Please Check Test Result"
+                exit 1
         - name: Publish test results
-          uses: actions/upload-artifact@v2
+          uses: actions/upload-artifact@v4
           with:
             name: robot-test-results
             path: results

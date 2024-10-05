@@ -10,7 +10,7 @@ Library         String
 Library         JSONLibrary
 Library         Process
 Library         Libs/SchemaLibrary.py    Resources/schemas/
-Library         CustomKeywords.py
+Library         Libs/CustomKeywords.py
 Variables       apischema.yaml
 Variables        ../Data/Config/live.yml
 

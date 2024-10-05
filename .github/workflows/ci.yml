@@ -18,9 +18,9 @@ jobs:
         python-version: ["3.11"]
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
@@ -32,10 +32,10 @@ jobs:
       run: |
         robot -d results TestCases
     - name: Store Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: success() || failure() 
       with:
-        name: test-results ${{ matrix.python-version }} # Choose a descriptive name for your artifact
+        name: test-results ${{ matrix.python-version }}
         path: |
           results
     - name: Report results
