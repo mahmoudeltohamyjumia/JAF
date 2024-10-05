@@ -40,7 +40,11 @@ jobs:
         path: |
           results
 
-
+    - name: Upload GitHub Pages content
+      uses: actions/upload-artifact@v4
+      with:
+        name: github-pages
+        path: ./results/  # Replace with the path to your built content
           
     - name: deploy to Github Pages
       uses: actions/deploy-pages@v4
