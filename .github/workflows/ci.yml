@@ -50,6 +50,15 @@ jobs:
     - name: Run tests
       run: |
         robot -d results --log index.html TestCases 
+
+    - name: Store Artifact
+      uses: actions/upload-artifact@v3
+      if: success() || failure() 
+      with:
+        name: test-results
+        path: |
+            results
+
     - name: Report results
       if: success() || failure() 
       run: |
