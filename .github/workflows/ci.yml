@@ -46,5 +46,5 @@ jobs:
     - name: Report results
       if: success() || failure() 
       run: |
-        pip install -r utils/requirements.txt
-        python utils/gha_reporter.py results/output.xml $GITHUB_STEP_SUMMARY
+        pip install -r requirements.txt
+        python Resources/Libs/gha_reporter.py results/output.xml $GITHUB_STEP_SUMMARY
