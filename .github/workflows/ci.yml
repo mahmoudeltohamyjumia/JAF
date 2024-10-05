@@ -35,7 +35,7 @@ jobs:
         rfbrowser init
     - name: Test with Robot Framework
       run: |
-        robot -d results --exclude car-configurator tests
+        robot -d results TestCases
     - name: Store Artifact
       uses: actions/upload-artifact@v3
       if: success() || failure() 
