@@ -15,11 +15,16 @@ Get Browser Console Log Entries
     ${log entries}=    Evaluate    $webdriver.get_log('browser')
     RETURN    ${log entries}
 
+Record Screen 
+    Start Video Recording    alias=None    name=DemoRecording    fps=None    size_percentage=1    embed=True    embed_width=300px    monitor=1
+
+Stop Record
+    Stop Video Recording    alias=None
 
 *** Test Cases ***
 Jumia | Vendor Center test
     #[Tags]    robot:skip
-    Start Video Recording
+    Record Screen
     Open Browser    https://vendorcenter-staging.jumia.com/sign-in    ${BROWSER}
     Maximize Browser Window
     Wait Until Element Is Visible    //button[@data-action="keycloak-login"]
@@ -31,4 +36,4 @@ Jumia | Vendor Center test
     Wait Until Element Is Visible    //div[contains(text(), "Welcome to Jumia! Let’s take your shop live!")]
     Sleep    20s
     Close Browser
-    Stop Video Recording
+    Stop Record
