@@ -22,7 +22,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
         INSTALL_DIR="/usr/local/bin"
         json=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest)
@@ -34,6 +33,7 @@ jobs:
         rfbrowser init
         sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0 libgirepository1.0-dev
         sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-4.0
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Run tests
       run: |
