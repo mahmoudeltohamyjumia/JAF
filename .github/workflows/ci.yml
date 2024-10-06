@@ -34,6 +34,7 @@ jobs:
         sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         rfbrowser init
+        sudo apt remove libfreeimage
 
     - name: Run tests
       run: |
