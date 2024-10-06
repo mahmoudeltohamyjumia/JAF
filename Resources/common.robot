@@ -20,7 +20,12 @@ Variables        apischema.yaml
 Variables        ../Data/Config/live.yml
 
 *** Variables ***
-${BASE_URL}                 https://api-vcs-staging.jumia.services/api/v2
+${VCS_BASE_URL}             https://api-vcs-staging.jumia.services/api/v2
+# ${UVR_BASE_URL}             https://api-uvr-staging.jumia.services/api/v2
+
+
+
+
 ${GLOBALTIMEOUT}            200 ms
 
 ${validgetresponse}         200
@@ -119,7 +124,7 @@ Api call
     IF    "${action}"=="post"
         ${response}    Post    url=${uri}    headers=${reqheaders}    data=${body}    files=${files}
     ELSE IF    "${action}"=="get"
-        ${response}    Get    url=${BASE_URL}${uri}    headers=${reqheaders}    params=${qryparams}
+        ${response}    Get    url=${uri}    headers=${reqheaders}    params=${qryparams}
     ELSE IF    "${action}"=="put"
         ${response}    Put    url=${uri}    headers=${reqheaders}    data=${body}
     ELSE IF    "${action}"=="delete"

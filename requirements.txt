@@ -6,6 +6,7 @@ matplotlib
 setuptools
 pytablewriter
 robotframework-faker
+robotframework-browser
 robotframework-requests
 robotframework-jsonlibrary
 robotframework-appiumlibrary

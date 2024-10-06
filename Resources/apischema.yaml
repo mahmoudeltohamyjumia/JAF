@@ -1,14 +1,29 @@
 APIs:
-  OrderDashboard:
-    totalPendingLastSevenDaysUsingGET:
-      action: get
-      bodyTemplate: none.template
-      params: totalPendingLastSevenDaysParams.template
-      headers: totalPendingLastSevenDaysHeaders.template
-      uri: /orders/total-pending-last-seven-days
+  vcs:
+    OrderDashboard:
+      totalPendingLastSevenDaysUsingGET:
+        action: get
+        bodyTemplate: none.template
+        params: totalPendingLastSevenDaysParams.template
+        headers: totalPendingLastSevenDaysHeaders.template
+        uri: https://api-vcs-staging.jumia.services/api/v2/orders/total-pending-last-seven-days
 
-      Responses:
-        'Pass': totalPendingLastSevenDays.schema.json
-        'Failed': Resources/schemas/genericError.schema.json
+        Responses:
+          'Pass': totalPendingLastSevenDays.schema.json
+          'Failed': Resources/schemas/genericError.schema.json
+
+
+  uvr:
+    UserController:
+      login:
+        action: post
+        bodyTemplate: login.template
+        params: totalPendingLastSevenDaysParams.template
+        headers: totalPendingLastSevenDaysHeaders.template
+        uri: https://api-uvr-staging.jumia.services/api/v2/api/v2/users/login/{provider}
+
+        Responses:
+          'Pass': totalPendingLastSevenDays.schema.json
+          'Failed': Resources/schemas/genericError.schema.json
 
 
