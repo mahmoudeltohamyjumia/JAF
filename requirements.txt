@@ -5,6 +5,8 @@ curlify
 matplotlib
 setuptools
 pytablewriter
+pycairo
+PyGObject
 robotframework-faker
 robotframework-browser
 robotframework-requests
