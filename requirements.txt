@@ -7,6 +7,7 @@ setuptools
 pytablewriter
 pycairo
 PyGObject
+Pillow
 robotframework-faker
 robotframework-browser
 robotframework-requests

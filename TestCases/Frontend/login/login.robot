@@ -2,7 +2,7 @@
 Documentation     A test suite with a single test for Jumia | Vendor Center
 ...               Created by hats' Robotcorder
 Resource     ../../../Resources/common.robot
-Library                ScreenCapLibrary  screenshot_module=PyGTK
+Library                ScreenCapLibrary  screenshot_module=pillow
 
 *** Variables ***
 ${BROWSER}    firefox
