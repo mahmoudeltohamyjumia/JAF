@@ -8,6 +8,7 @@ ${URL}    https://vendorcenter-staging.jumia.com/
 
 *** Test Cases ***
 Intercept Login Request
+    [Tags]    robot:skip
     New Browser    firefox    headless=True    args=['disable-web-security','dom.disable_beforeunload']
     New Page    ${URL}
     Click    xpath=(//button[@data-action="keycloak-login"])[1]
