@@ -16,3 +16,4 @@ robotframework-appiumlibrary
 robotframework-seleniumlibrary
 robotframework-screencaplibrary
 robotframework-databaselibrary
+robotframework-seleniumtestability
