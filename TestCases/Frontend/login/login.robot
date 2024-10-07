@@ -5,7 +5,7 @@ Resource     ../../../Resources/common.robot
 
 
 *** Variables ***
-${BROWSER}    firefox
+${BROWSER}    headlessfirefox
 ${SLEEP}    3
 
 *** Keywords ***
