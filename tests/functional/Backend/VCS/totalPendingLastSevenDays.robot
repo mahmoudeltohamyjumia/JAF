@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation     test suite
 Force Tags       BID-REQ-002
-Resource         ../../../Resources/common.robot
-Variables        ../../../Data/Config/live.yml
+Resource         ../../../../Resources/common.robot
+Variables        ../../../../Data/Config/live.yml
 
 *** Variables ***
 ${Authorization}    eyJhbGciOiJIUzI1NiJ9.eyJnb29nbGVJZCI6IjExMDc0NTY0OTQxOTg0NDU4NjM4MCIsInN1YiI6IjExMDc0NTY0OTQxOTg0NDU4NjM4MCIsImlzcyI6Imh0dHA6XC9cL2ludGVybmFsLWFwaS1hY2wtc3RhZ2luZy5qdW1pYS5zZXJ2aWNlcyIsIm5hbWUiOiJNYWhtb3VkIEVsIFRvaGFteSIsImV4cCI6MTcyODMxODExOCwidHlwZSI6IkxPR0lOIiwiZW1haWwiOiJtYWhtb3VkLmVsdG9oYW15QGp1bWlhLmNvbSIsInBpY3R1cmUiOiJodHRwczpcL1wvbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbVwvYVwvQUNnOG9jSi1RektIdWxkSmotYVk2SFkwenpZcURGS2RCeGVQWXhRVFJIN0xjWFZ5cGNLeXdiaz1zOTYtYyIsInNpZCI6IjNhZjQ1MWUwLTdhZjQtM2ZlNS1iZTZhLWRmNzZkZjdmYzVlNSIsInVzZXJuYW1lIjoibWFobW91ZC5lbHRvaGFteUBqdW1pYS5jb20ifQ.FjMoIwJZGXReu_P7B_TyL3aAiFl3xisdq2l3Zej0o70

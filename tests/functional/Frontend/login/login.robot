@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     A test suite with a single test for Jumia | Vendor Center
 ...               Created by hats' Robotcorder
-Resource     ../../../Resources/common.robot
+Resource     ../../../../Resources/common.robot
 
 
 *** Variables ***
