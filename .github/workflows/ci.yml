@@ -36,7 +36,7 @@ jobs:
         rfbrowser init
     - name: Run tests
       run: |
-        robot -d results --log index.html TestCases 
+        robot -d results --log index.html tests 
 
     - name: Store Artifact
       uses: actions/upload-artifact@v4
