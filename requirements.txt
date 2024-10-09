@@ -5,6 +5,7 @@ seaborn
 PyGObject
 pandas
 Jinja2
+jsonschema
 pyyaml
 curlify
 reportlab

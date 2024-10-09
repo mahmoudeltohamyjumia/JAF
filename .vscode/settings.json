@@ -4,6 +4,7 @@
         "curlify",
         "dateutil",
         "Enddates",
+        "jsonschema",
         "Jumia",
         "mahmoudeltohamy",
         "remoting",
