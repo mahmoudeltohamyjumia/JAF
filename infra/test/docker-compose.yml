@@ -1,0 +1,4 @@
+services:
+  vcs-test: 
+    build: 
+      context: .

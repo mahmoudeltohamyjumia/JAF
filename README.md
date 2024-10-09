@@ -28,21 +28,21 @@ a) Directory structure of our current Templates
 
 the CI/CD pipeline structure, it broken down into the following stages:
 
-1. **Commit & push**: When tests are finished/ready it is commited to this shared repository (gitlab), with integration with the central code base of the whole alias number project.
+1. **Commit & push**: When tests are finished/ready it is committed to this shared repository (gitlab), with integration with the central code base of the whole alias number project.
 
 2. **Automated Testing**: Once any trigger mechanism is applied (push/branch merge/schedule/upstream trigger), the robot tests are automatically triggered. There are various testing methodologies that can be used to ensure an application looks and behaves as expected and ensure maximum coverage. 
 
 3. **Deployment**: In the final stage, robot test report is rolled out into gitlab pages. the report is shared to the concerned stackholders.
 
-![overall cicd example](Doc/images/ci_cd.png)
+![overall CI/CD example](Doc/images/ci_cd.png)
 
 ## Process Flow and Git Branching Strategy
 
 ### local development
 The process of using git in a project depends mainly on the following process:
-1. clone the Git repository as a working copy if not exsits, for each feature/cards create a new branch  
+1. clone the Git repository as a working copy if not exists, for each feature/cards create a new branch  
 2. You modify the working copy by adding/editing files.
-3. If necessary, update the working copy by taking other tester's changes from their bracned using cherry picking or merge commit.
+3. If necessary, update the working copy by taking other tester's changes from their branched using cherry picking or merge commit.
 4. You review the changes before commit. If everything is fine, then push the changes to the repository.
 5. After committing, the tests will trigger and report will be generated, fix the errors on the branch if exists, and so on.
 

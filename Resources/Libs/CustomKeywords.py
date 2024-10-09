@@ -9,6 +9,8 @@ from jsonpath_ng import jsonpath, parse
 from random import randint
 from dateutil import parser
 from faker import Faker
+from robot.libraries.BuiltIn import BuiltIn
+from robot.libraries.BuiltIn import RobotNotRunningError
 
 warnings.filterwarnings("ignore")
 
@@ -44,17 +46,15 @@ def Render_The_Template(template,**dataDict):
     return tm.render(dataDict, autoescape=True)
 
 @keyword('Convert To Curl')
-def convert_to_curl(r):
+def convert_to_curl(response):
     """
     Convert the given requests response object to a curl command.
 
     Args:
-        r: The requests response object to be converted.
+        response: The requests response object to be converted.
 
     Returns:
         str: The curl command as a string.
     """
-    data = curlify.to_curl(r)
-    data = data.replace("curl -X ", "curl --location --request ")
-    data = data.replace(" -H ", " --header ")
-    return data
+    data = curlify.to_curl(response.request).replace("-H 'Accept: */*' ", "").replace("-H 'Accept-Encoding: gzip, deflate'","").replace("-H 'Connection: keep-alive'","").replace("-H 'User-Agent: python-requests/2.32.3'","")
+    print(data)

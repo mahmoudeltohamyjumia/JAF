@@ -32,6 +32,11 @@ ${validgetresponse}         200
 ${validcreateresponse}      201
 ${validupdateresponse}      200
 ${validdeleteresponse}      204
+${base_auth_url}            https://vendor-api.jumia.com
+${client_id}                250618051007-tpk26eoha2tpafs0atk4tu7kse3b4l6u.apps.googleusercontent.com
+${code}                     4/0AVG7fiQcDcaBYAFRM14q7NerdMmG_TWt8fD_wvsvsftfLxqJP1iBEbFHG2qBQq-DpwJuBA
+${redirectUri}              https://vendorcenter-staging.jumia.com
+${instanceId}               internal
 
 *** Keywords ***
 Response Body Should Be Valid against schema
@@ -118,8 +123,6 @@ Api call
     ELSE
         &{files}    Set Variable    ${None}
     END
-    # ...    Run Keywords    ${files}=    Get Binary File    ${descriptor.files}    AND    ${files}    Create Dictionary    file=${files}
-
     # =====================================
     IF    "${action}"=="post"
         ${response}    Post    url=${uri}    headers=${reqheaders}    data=${body}    files=${files}
@@ -135,8 +138,7 @@ Api call
         ${response}    Set Variable    ${None}
     END
     sleep    ${GLOBALTIMEOUT}
-    Convert To Curl    ${response.request}
-    Log    ${response.json()}
+    Convert To Curl    ${response}
     RETURN    ${response}
 
 Assert API response schema

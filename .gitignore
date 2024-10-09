@@ -8,3 +8,4 @@ report.html
 interactive_console_output.xml
 *.log
 *.webm
+playwright-log.txt
