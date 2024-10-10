@@ -53,9 +53,9 @@ def main():
     # Write Table with Results for each Suite as Markdown
     table_columns = [
         "Test Suite",
-        "Passed ✅",
-        "Failed ❌",
-        "Skipped 🛑",
+        "Passed 🟢",
+        "Failed 🛑",
+        "Skipped 🟡",
         "Total",
         "Elapsed Time ⏱️",
     ]
@@ -68,10 +68,10 @@ def main():
     writer.write_table()
     f.write("\n")
     status_emoji = {
-        "PASS": "✅PASS",
-        "FAIL": "❌FAIL",
-        "SKIP": "🛑SKIP",
-        "NOT RUN": "NOT RUN",
+        "PASS": "🟢PASS",
+        "FAIL": "🛑FAIL",
+        "SKIP": "🟡SKIP",
+        "NOT RUN": "⚪NOT RUN",
         "NOT SET": "❓NOT SET",
     }
     for suite in suites_with_tests:

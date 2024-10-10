@@ -1,392 +1,508 @@
-http:
-  errors:
-    - code: 1001
-      message: "An unexpected error occurred. We'll work hard to fix it as soon as possible!"
-    - code: 1002
-      message: "The country id was not found."
-    - code: 1003
-      message: "The country language was not found."
-    - code: 1004
-      message: "The language id was not found."
-    - code: 1005
-      message: "The translations don't contemplate all available languages. Please fill all of them."
-    - code: 1006
-      message: "The country code was not found."
-    - code: 1007
-      message: "The payload syntax is not valid."
-    - code: 1008
-      message: "The Business Client id was not found."
-    - code: 1009
-      message: "The Business Client code was not found."
-    - code: 1010
-      message: "UVR B2B request failed."
-    - code: 1011
-      message: "SC B2B request failed."
-    - code: 1012
-      message: "STOCK B2B request failed."
-    - code: 1013
-      message: "Syntax message validation failed."
-    - code: 1014
-      message: "An unexpected error occurred. Please contact the support team and retry later."
-    - code: 1015
-      message: "The Restrictions Module was not executed for the Product because the Pre Requisites failed."
-    - code: 1016
-      message: "The %s is an invalid %s value."
-    - code: 1017
-      message: "Invalid page value. It must be more than 1"
-    - code: 1018
-      message: "Invalid size. It must be between 1 and 100."
-    - code: 1019
-      message: "The category code was not found. Please provide a code returned from the getCategory API."
-    - code: 1020
-      message: "The category code is invalid. Please provide a code returned from the getCategory API."
-    - code: 1021
-      message: "'%s' should be a valid '%s' and '%s' isn't"
-    - code: 1022
-      message: "The requested content type is not valid."
-    - code: 1023
-      message: "ProductSet By Sid on QC failed."
-    - code: 2001
-      message: "The brand identifier (id) was not found."
-    - code: 2002
-      message: "The brand identifier (sid) was not found."
-    - code: 2003
-      message: "The size provided for the Brand name is not valid."
-    - code: 2004
-      message: "The Brand name should not contain white spaces at the beginning or the end of it."
-    - code: 2005
-      message: "The brand name is not compliant according to the naming policy."
-    - code: 2006
-      message: "The Brand with this name already exists (Brand name are case and accent insensitive). If you can not find it, please try with or without accents."
-    - code: 2007
-      message: "The brand status cannot be updated without a valid translation."
-    - code: 2008
-      message: "The Brand Display Name already exists on the selected country (Display names are case and accent insensitive)."
-    - code: 2009
-      message: "The brand translation size provided is not valid."
-    - code: 2010
-      message: "The brand translation should not contain white spaces at the beginning or the end of it."
-    - code: 2011
-      message: "The brand with code was not found."
-    - code: 3001
-      message: "The category identifier (id) was not found."
-    - code: 3002
-      message: "The category identifier (sid) was not found."
-    - code: 3003
-      message: "The size provided for the category name is not valid."
-    - code: 3004
-      message: "The category name should not contain white space at the beginning or the end of it."
-    - code: 3005
-      message: "The category name is not compliant according to the naming policy."
-    - code: 3006
-      message: "The category name already exists."
-    - code: 3007
-      message: "The category translation is not compliant according to the naming policy."
-    - code: 3008
-      message: "The category status cannot be updated without a valid translation."
-    - code: 3009
-      message: "The parent category status invalidates this change. Please activate the parent category first."
-    - code: 3010
-      message: "The size provided for the category translation is not valid."
-    - code: 3011
-      message: "The maximum number of sub categories was exceeded."
-    - code: 3012
-      message: "The Category tree does not have an Attributes Set defined."
-    - code: 3013
-      message: "The Category with code was not found."
-    - code: 3014
-      message: "The Category Attributes Set was not found."
-    - code: 3015
-      message: "The Category Minimum Price Discount Percentage must be greater than 0.00."
-    - code: 3016
-      message: "The Category Maximum Price Discount Percentage must be less than 100.00."
-    - code: 3017
-      message: "The Category Minimum Price Discount Percentage must be less than Maximum Price Discount Percentage."
-    - code: 3018
-      message: "The Category Maximum Price must be greater than 0.00."
-    - code: 3019
-      message: "The Category Minimum Price must be greater than 0.00."
-    - code: 3020
-      message: "The Category Minimum Price must be less than Maximum Price."
-    - code: 3021
-      message: "Categories not found by Codes [{0}]"
-    - code: 4001
-      message: "This Attribute Set name already exists."
-    - code: 4002
-      message: "The Attribute Set with the provided id wasn't found."
-    - code: 4003
-      message: "This Attribute Set name is not valid."
-    - code: 4004
-      message: "There can only be one Attribute Set defined as global."
-    - code: 4005
-      message: "The Attribute Set with the provided sid wasn't found."
-    - code: 4006
-      message: "The Attributes Set translation is not compliant according to the naming policy."
-    - code: 4007
-      message: "The Attributes Set translation size provided is not valid."
-    - code: 4008
-      message: "The Attributes Set translation name should not contain white space at the beginning or the end of it."
-    - code: 5001
-      message: "The Attribute Level identifier (id) was not found."
-    - code: 5002
-      message: "The Attribute Set identifier (id) was not found."
-    - code: 5003
-      message: "The Attribute Type identifier (id) was not found."
-    - code: 5004
-      message: "The Attribute identifier (id) was not found."
-    - code: 5005
-      message: "The Attribute name already exists in this Attribute Set with the same level."
-    - code: 5006
-      message: "The Attribute name is not compliant according to the naming policy."
-    - code: 5007
-      message: "The Attribute name size provided is not valid."
-    - code: 5008
-      message: "The Attribute name should not contain white space at the beginning or the end of it."
-    - code: 5009
-      message: "The Attribute Option identifier (id) was not found."
-    - code: 5010
-      message: "The provided Attribute Validation is not valid."
-    - code: 5011
-      message: "This Attribute Option name already exists on the current Attribute."
-    - code: 5012
-      message: "The Attribute Type does not allow the addition of Options."
-    - code: 5013
-      message: "The Attribute Option name size provided is not valid."
-    - code: 5014
-      message: "The provided Attribute and Attribute Option combination does not exist."
-    - code: 5015
-      message: "The provided Attribute Date Format is not compliant according available date formats."
-    - code: 5016
-      message: "The provided Attribute DateTime Format is not compliant according available datetime formats."
-    - code: 5017
-      message: "The provided Attribute Type does not allow validations."
-    - code: 5018
-      message: "The provided translation violates the size constraints."
-    - code: 5019
-      message: "There are duplicated attributes on the provided product."
-    - code: 5020
-      message: "There are duplicated attribute options on the provided product."
-    - code: 5021
-      message: "There can only be one option set as default."
-    - code: 5022
-      message: "There are duplicated attribute option translations."
-    - code: 5023
-      message: "The Attribute Variation was not found."
-    - code: 5024
-      message: "Multiple Attribute Variations were found."
-    - code: 5025
-      message: "The Attribute Option identifier (sid) was not found."
-    - code: 5026
-      message: "The provided Attribute Type does not have an associated Tool Tip template."
-    - code: 5027
-      message: "The Attribute Variation value does not match current value."
-    - code: 5028
-      message: "ParentSKU value does not match current value."
-    - code: 5029
-      message: "Primary Category value does not match current value."
-    - code: 5030
-      message: "The required Global Attribute not found."
-    - code: 5031
-      message: "Only Text and Text Area Attributes are translatable."
-    - code: 5032
-      message: "Product's Variation can not be updated, since it was QC Approved at least once."
-    - code: 6001
-      message: "The Product cannot be updated via GPC."
-    - code: 6002
-      message: "The seller sku and seller are duplicated."
-    - code: 6003
-      message: "The product with selected sid already exists."
-    - code: 6004
-      message: "The productSet with selected sid already exists."
-    - code: 6005
-      message: "The seller with selected sid already exists."
-    - code: 6006
-      message: "The product with the selected sid was not found."
-    - code: 6007
-      message: "The product is duplicated on selected country."
-    - code: 6008
-      message: "The product attribute does not have neither value or option."
-    - code: 6009
-      message: "The product attribute has both value and option."
-    - code: 6010
-      message: "There were validation errors on the callback request. Request set as success but the createdAt date is null."
-    - code: 6011
-      message: "The Product Sid is not related to the received Product Set Sid."
-    - code: 6012
-      message: "The Product Country relation does not exist."
-    - code: 6013
-      message: "The Product Country status is not valid for callback."
-    - code: 6014
-      message: "The product callback is not allowed for Seller Country Master."
-    - code: 6015
-      message: "The request date interval is invalid or higher than one year."
-    - code: 6016
-      message: "The requested Image payload is not compliant to validations."
-    - code: 6017
-      message: "The product seller sid does not match with the updated product seller sid."
-    - code: 6018
-      message: "The product seller sku does not match with the updated product seller sku."
-    - code: 6019
-      message: "The Product was not created with success on any business client."
-    - code: 6020
-      message: "The Product can not be updated on Country because Subscription Module is different of Succeeded."
-    - code: 6021
-      message: "The Product does not belong to any of the Shops provided."
-    - code: 6022
-      message: "The Attribute Variation is invalid."
-    - code: 6023
-      message: "The Variation is duplicated in the current Product Set."
-    - code: 6024
-      message: "The Product Set is duplicated for Seller Sid and Parent Sku."
-    - code: 6025
-      message: "An error occurred while processing the current product creation request."
-    - code: 6026
-      message: "An error occurred while processing the current product update request."
-    - code: 6027
-      message: "There are headers with the same name when creating the template."
-    - code: 6028
-      message: "The Product Set does not allow product creation by API."
-    - code: 6029
-      message: "URL provided does not return a valid image"
-    - code: 6030
-      message: "Product Image with invalid url."
-    - code: 6031
-      message: "The given Attribute Type does not have any validator."
-    - code: 6032
-      message: "The selected category is inactive in all countries."
-    - code: 6033
-      message: "Product Image download or storage failed."
-    - code: 6034
-      message: "Product Image dimensions validation failed."
-    - code: 6035
-      message: "Product Image extension is not allowed."
-    - code: 6036
-      message: "The Additional Category is equal to the Primary Category."
-    - code: 6037
-      message: "The Additional Category is not related to the Primary Category."
-    - code: 6038
-      message: "The given Attribute Type does not have any builder."
-    - code: 6039
-      message: "The Product is not GVC enabled."
-    - code: 6040
-      message: "The Product is not eligible to be synced in this country as of this moment."
-    - code: 6041
-      message: "The Product is not eligible to have status synced as of this moment."
-    - code: 6042
-      message: "The Country filters are mandatory when filtering by status."
-    - code: 6043
-      message: "The Product Set identifier (sid) was not found."
-    - code: 6044
-      message: "The Product Set cannot be GVC enabled to fetch SC product set images."
-    - code: 6045
-      message: "The Product Status cannot be updated from deleted to another status."
-    - code: 6046
-      message: "The Product Update rejected, validations failed to be fulfilled."
-    - code: 6047
-      message: "The Product Creation rejected, validations failed to be fulfilled."
-    - code: 6048
-      message: "The Product Country was restricted."
-    - code: 6049
-      message: "Product Set with different number of images."
-    - code: 6050
-      message: "Product Set image update only allowed for jumia-ng"
-    - code: 6051
-      message: "Product is not eligible to be synced due to qc status"
-    - code: 6052
-      message: "Product Initial stock value cannot be negative"
-    - code: 6053
-      message: "Please provide a valid qc status"
-    - code: 6054
-      message: "Could not retrieve Products for selected shops. Please choose other shop."
-    - code: 6055
-      message: "Date interval 'To' should not be empty."
-    - code: 6056
-      message: "Date interval 'From' should not be after 'To'."
-    - code: 6057
-      message: "Could not retrieve Product Kpi for provided product"
-    - code: 6058
-      message: "KPI was not found"
-    - code: 6059
-      message: "File has invalid type"
-    - code: 6060
-      message: "ProductSet draft not found"
-    - code: 6061
-      message: "User is authenticated but does not have permission to access."
-    - code: 6062
-      message: "ProductSet not found"
-    - code: 6063
-      message: "Products don't belong to ProductSet"
-    - code: 6064
-      message: "Please add at least one type of update flow"
-    - code: 6065
-      message: "Product set does not belong to shop"
-    - code: 6066
-      message: "Product update flow {0} is invalid"
-    - code: 6067
-      message: "The shop default currency [USD] is not convertible."
-    - code: 6068
-      message: "Only price & stock updates are allowed for this product. Please create a new product if you want to change the contents."
-    - code: 6069
-      message: "Product Update sale price dates must be different from each other."
-    - code: 6070
-      message: "ProductSet By Id Not found."
-    - code: 6071
-      message: "The barcode should contain digits only"
-    - code: 6072
-      message: "The barcode should be 8, 12, 13 or 14 digits"
-    - code: 6073
-      message: "The barcode is invalid"
-    - code: 6074
-      message: "A product with the same barcode gtin already exists for this seller."
-    - code: 6075
-      message: "Update on deleted products is not allowed."
-    - code: 7001
-      message: "An error occurred while processing the current price update request."
-    - code: 7002
-      message: "Price update request rejected: Missing or invalid field PRODUCT_SID."
-    - code: 7003
-      message: "Price update request rejected: Missing or invalid field SELLER_SKU."
-    - code: 7004
-      message: "The submitted currency is different from the shop default currency."
-    - code: 7005
-      message: "An error occurred while processing the price conversion."
-    - code: 7006
-      message: "User email does not have permission to change prices."
-    - code: 9001
-      message: "An error occurred while processing the current product status update request."
-    - code: 9002
-      message: "Product Status Unable to be updated."
-    - code: 9003
-      message: "Products  Status Unable to be updated between specified ids."
-    - code: 8001
-      message: "The user does not have access to provided master shop."
-    - code: 8002
-      message: "The user does not have access to provided shops."
-    - code: 8003
-      message: "The user does not have required roles."
-    - code: 8004
-      message: "The user is mandatory."
-    - code: 8005
-      message: "An error occurred while attempting to fetch the shop."
-    - code: 10001
-      message: "Initial price validations failed"
-    - code: 11001
-      message: "Products API Token serialization failed"
-    - code: 11002
-      message: "Products API Token decoding failed"
-    - code: 11003
-      message: "Products API Token encoding failed"
-    - code: 11004
-      message: "Products API Token is invalid"
-    - code: 11005
-      message: "The Language code not found."
-    - code: 11006
-      message: "The Business Client country was not found."
-    - code: 11007
-      message: "Attribute translation type not found."
-    - code: 11008
-      message: "English translations are mandatory for attribute description."
-    - code: 12001
-      message: "The endpoint does not exist, please check the documentation."
-    - code: 20001
-      message: "User is authenticated but does not have permission to access."
+COMMON_ERROR_1:
+  CODE: 1001
+  MESSAGE: "An unexpected error occurred. We'll work hard to fix it as soon as possible!"
+
+COMMON_ERROR_2:
+  CODE: 1014
+  MESSAGE: "An unexpected error occurred. Please contact the support team and retry later."
+
+UNKNOWN_COUNTRY:
+  CODE: 1002
+  MESSAGE: "The country id was not found."
+
+COUNTRY_CODE_NOT_FOUND:
+  CODE: 1006
+  MESSAGE: "The country code was not found."
+
+COUNTRY_LANGUAGE_NOT_FOUND:
+  CODE: 1003
+  MESSAGE: "The country language was not found."
+
+LANGUAGE_ID_NOT_FOUND:
+  CODE: 1004
+  MESSAGE: "The language id was not found."
+
+INSUFFICIENT_TRANSLATIONS:
+  CODE: 1005
+  MESSAGE: "The translations don't contemplate all available languages. Please fill all of them."
+
+PAYLOAD_NOT_VALID:
+  CODE: 1007
+  MESSAGE: "The payload syntax is not valid."
+
+CLIENT_ID_NOT_FOUND:
+  CODE: 1008
+  MESSAGE: "The Business Client id was not found."
+
+CLIENT_CODE_NOT_FOUND:
+  CODE: 1009
+  MESSAGE: "The Business Client code was not found."
+
+UVR_REQUEST_FAILED:
+  CODE: 1010
+  MESSAGE: "UVR B2B request failed."
+SC_REQUEST_FAILED:
+  CODE: 1011
+  MESSAGE: "SC B2B request failed."
+STOCK_REQUEST_FAILED:
+  CODE: 1012
+  MESSAGE: "STOCK B2B request failed."
+
+MESSAGE_VALIDATION_FAILED:
+  CODE: 1013
+  MESSAGE: "Syntax MESSAGE validation failed."
+
+PREREQUISITES_RESTRICTIONS_FAILED:
+  CODE: 1015
+  MESSAGE: "The Restrictions Module was not executed for the Product because the Pre Requisites failed."
+
+ITEM_VALUE_INVALID:
+  CODE: 1016
+  MESSAGE: "The %s is an invalid %s value."
+
+ITEM_VALUE_SOULD_INVALID:
+  CODE: 1021
+  MESSAGE: "'%s' should be a valid '%s' and '%s' isn't"
+
+PAGE_VALUE_INVALID:
+  CODE: 1017
+  MESSAGE: "Invalid page value. It must be more than 1"
+
+INVALID_SIZE:
+  CODE: 1018
+  MESSAGE: "Invalid size. It must be between 1 and 100."
+
+CATEGORY_CODE_NOT_FOUND:
+  CODE: 1019
+  MESSAGE: "The category code was not found. Please provide a code returned from the getCategory API."
+
+CATEGORY_CODE_INVALID:
+  CODE: 1020
+  MESSAGE: "The category code is invalid. Please provide a code returned from the getCategory API."
+
+INVALID_CONTENT_TYPE:
+  CODE: 1022
+  MESSAGE: "The requested content type is not valid."
+
+PRODUCTSET_QC_FAILED:
+  CODE: 1023
+  MESSAGE: "ProductSet By Sid on QC failed."
+
+BRAND_ID_NOT_FOUND:
+  CODE: 2001
+  MESSAGE: "The brand identifier (id) was not found."
+
+BRAND_SID_NOT_FOUND:
+  CODE: 2002
+  MESSAGE: "The brand identifier (sid) was not found."
+
+BRAND_NAME__SIZE_NOT_VALID:
+  CODE: 2003
+  MESSAGE: "The size provided for the Brand name is not valid."
+
+NO_BRAND_NAME_WHITE_SPACES:
+  CODE: 2004
+  MESSAGE: "The Brand name should not contain white spaces at the beginning or the end of it."
+
+BRAND_NAME_NON_COMPLIANT:
+  CODE: 2005
+  MESSAGE: "The brand name is not compliant according to the naming policy."
+
+    # - CODE: 2006
+    #   MESSAGE: "The Brand with this name already exists (Brand name are case and accent insensitive). If you can not find it, please try with or without accents."
+    # - CODE: 2007
+    #   MESSAGE: "The brand status cannot be updated without a valid translation."
+    # - CODE: 2008
+    #   MESSAGE: "The Brand Display Name already exists on the selected country (Display names are case and accent insensitive)."
+    # - CODE: 2009
+    #   MESSAGE: "The brand translation size provided is not valid."
+    # - CODE: 2010
+    #   MESSAGE: "The brand translation should not contain white spaces at the beginning or the end of it."
+    # - CODE: 2011
+    #   MESSAGE: "The brand with code was not found."
+    # - CODE: 3001
+    #   MESSAGE: "The category identifier (id) was not found."
+    # - CODE: 3002
+    #   MESSAGE: "The category identifier (sid) was not found."
+    # - CODE: 3003
+    #   MESSAGE: "The size provided for the category name is not valid."
+    # - CODE: 3004
+    #   MESSAGE: "The category name should not contain white space at the beginning or the end of it."
+    # - CODE: 3005
+    #   MESSAGE: "The category name is not compliant according to the naming policy."
+    # - CODE: 3006
+    #   MESSAGE: "The category name already exists."
+    # - CODE: 3007
+    #   MESSAGE: "The category translation is not compliant according to the naming policy."
+    # - CODE: 3008
+    #   MESSAGE: "The category status cannot be updated without a valid translation."
+    # - CODE: 3009
+    #   MESSAGE: "The parent category status invalidates this change. Please activate the parent category first."
+    # - CODE: 3010
+    #   MESSAGE: "The size provided for the category translation is not valid."
+    # - CODE: 3011
+    #   MESSAGE: "The maximum number of sub categories was exceeded."
+    # - CODE: 3012
+    #   MESSAGE: "The Category tree does not have an Attributes Set defined."
+    # - CODE: 3013
+    #   MESSAGE: "The Category with code was not found."
+    # - CODE: 3014
+    #   MESSAGE: "The Category Attributes Set was not found."
+    # - CODE: 3015
+    #   MESSAGE: "The Category Minimum Price Discount Percentage must be greater than 0.00."
+    # - CODE: 3016
+    #   MESSAGE: "The Category Maximum Price Discount Percentage must be less than 100.00."
+    # - CODE: 3017
+    #   MESSAGE: "The Category Minimum Price Discount Percentage must be less than Maximum Price Discount Percentage."
+    # - CODE: 3018
+    #   MESSAGE: "The Category Maximum Price must be greater than 0.00."
+    # - CODE: 3019
+    #   MESSAGE: "The Category Minimum Price must be greater than 0.00."
+    # - CODE: 3020
+    #   MESSAGE: "The Category Minimum Price must be less than Maximum Price."
+    # - CODE: 3021
+    #   MESSAGE: "Categories not found by codes [{0}]"
+    # - CODE: 4001
+    #   MESSAGE: "This Attribute Set name already exists."
+    # - CODE: 4002
+    #   MESSAGE: "The Attribute Set with the provided id wasn't found."
+    # - CODE: 4003
+    #   MESSAGE: "This Attribute Set name is not valid."
+    # - CODE: 4004
+    #   MESSAGE: "There can only be one Attribute Set defined as global."
+    # - CODE: 4005
+    #   MESSAGE: "The Attribute Set with the provided sid wasn't found."
+    # - CODE: 4006
+    #   MESSAGE: "The Attributes Set translation is not compliant according to the naming policy."
+    # - CODE: 4007
+    #   MESSAGE: "The Attributes Set translation size provided is not valid."
+    # - CODE: 4008
+    #   MESSAGE: "The Attributes Set translation name should not contain white space at the beginning or the end of it."
+    # - CODE: 5001
+    #   MESSAGE: "The Attribute Level identifier (id) was not found."
+    # - CODE: 5002
+    #   MESSAGE: "The Attribute Set identifier (id) was not found."
+    # - CODE: 5003
+    #   MESSAGE: "The Attribute Type identifier (id) was not found."
+    # - CODE: 5004
+    #   MESSAGE: "The Attribute identifier (id) was not found."
+    # - CODE: 5005
+    #   MESSAGE: "The Attribute name already exists in this Attribute Set with the same level."
+    # - CODE: 5006
+    #   MESSAGE: "The Attribute name is not compliant according to the naming policy."
+    # - CODE: 5007
+    #   MESSAGE: "The Attribute name size provided is not valid."
+    # - CODE: 5008
+    #   MESSAGE: "The Attribute name should not contain white space at the beginning or the end of it."
+    # - CODE: 5009
+    #   MESSAGE: "The Attribute Option identifier (id) was not found."
+    # - CODE: 5010
+    #   MESSAGE: "The provided Attribute Validation is not valid."
+    # - CODE: 5011
+    #   MESSAGE: "This Attribute Option name already exists on the current Attribute."
+    # - CODE: 5012
+    #   MESSAGE: "The Attribute Type does not allow the addition of Options."
+    # - CODE: 5013
+    #   MESSAGE: "The Attribute Option name size provided is not valid."
+    # - CODE: 5014
+    #   MESSAGE: "The provided Attribute and Attribute Option combination does not exist."
+    # - CODE: 5015
+    #   MESSAGE: "The provided Attribute Date Format is not compliant according available date formats."
+    # - CODE: 5016
+    #   MESSAGE: "The provided Attribute DateTime Format is not compliant according available datetime formats."
+    # - CODE: 5017
+    #   MESSAGE: "The provided Attribute Type does not allow validations."
+    # - CODE: 5018
+    #   MESSAGE: "The provided translation violates the size constraints."
+    # - CODE: 5019
+    #   MESSAGE: "There are duplicated attributes on the provided product."
+    # - CODE: 5020
+    #   MESSAGE: "There are duplicated attribute options on the provided product."
+    # - CODE: 5021
+    #   MESSAGE: "There can only be one option set as default."
+    # - CODE: 5022
+    #   MESSAGE: "There are duplicated attribute option translations."
+    # - CODE: 5023
+    #   MESSAGE: "The Attribute Variation was not found."
+    # - CODE: 5024
+    #   MESSAGE: "Multiple Attribute Variations were found."
+    # - CODE: 5025
+    #   MESSAGE: "The Attribute Option identifier (sid) was not found."
+    # - CODE: 5026
+    #   MESSAGE: "The provided Attribute Type does not have an associated Tool Tip template."
+    # - CODE: 5027
+    #   MESSAGE: "The Attribute Variation value does not match current value."
+    # - CODE: 5028
+    #   MESSAGE: "ParentSKU value does not match current value."
+    # - CODE: 5029
+    #   MESSAGE: "Primary Category value does not match current value."
+    # - CODE: 5030
+    #   MESSAGE: "The required Global Attribute not found."
+    # - CODE: 5031
+    #   MESSAGE: "Only Text and Text Area Attributes are translatable."
+    # - CODE: 5032
+    #   MESSAGE: "Product's Variation can not be updated, since it was QC Approved at least once."
+    # - CODE: 6001
+    #   MESSAGE: "The Product cannot be updated via GPC."
+    # - CODE: 6002
+    #   MESSAGE: "The seller sku and seller are duplicated."
+    # - CODE: 6003
+    #   MESSAGE: "The product with selected sid already exists."
+    # - CODE: 6004
+    #   MESSAGE: "The productSet with selected sid already exists."
+    # - CODE: 6005
+    #   MESSAGE: "The seller with selected sid already exists."
+    # - CODE: 6006
+    #   MESSAGE: "The product with the selected sid was not found."
+    # - CODE: 6007
+    #   MESSAGE: "The product is duplicated on selected country."
+    # - CODE: 6008
+    #   MESSAGE: "The product attribute does not have neither value or option."
+    # - CODE: 6009
+    #   MESSAGE: "The product attribute has both value and option."
+    # - CODE: 6010
+    #   MESSAGE: "There were validation errors on the callback request. Request set as success but the createdAt date is null."
+    # - CODE: 6011
+    #   MESSAGE: "The Product Sid is not related to the received Product Set Sid."
+    # - CODE: 6012
+    #   MESSAGE: "The Product Country relation does not exist."
+    # - CODE: 6013
+    #   MESSAGE: "The Product Country status is not valid for callback."
+    # - CODE: 6014
+    #   MESSAGE: "The product callback is not allowed for Seller Country Master."
+    # - CODE: 6015
+    #   MESSAGE: "The request date interval is invalid or higher than one year."
+
+INVALID_PRODUCT_IMAGE:
+  CODE: 6016
+  MESSAGE: "The requested Image payload is not compliant to validations."
+
+INVALID_PRODUCT_SID:
+  CODE: 6017
+  MESSAGE: "The product seller sid does not match with the updated product seller sid."
+
+INVALID_PRODUCT_SKU:
+  CODE: 6018
+  MESSAGE: "The product seller sku does not match with the updated product seller sku."
+
+INVALID_PRODUCT_SKU:
+    - CODE: 6019
+      MESSAGE: "The Product was not created with success on any business client."
+
+    # - CODE: 6020
+    #   MESSAGE: "The Product can not be updated on Country because Subscription Module is different of Succeeded."
+    # - CODE: 6021
+    #   MESSAGE: "The Product does not belong to any of the Shops provided."
+    # - CODE: 6022
+    #   MESSAGE: "The Attribute Variation is invalid."
+    # - CODE: 6023
+    #   MESSAGE: "The Variation is duplicated in the current Product Set."
+    # - CODE: 6024
+    #   MESSAGE: "The Product Set is duplicated for Seller Sid and Parent Sku."
+    # - CODE: 6025
+    #   MESSAGE: "An error occurred while processing the current product creation request."
+    # - CODE: 6026
+    #   MESSAGE: "An error occurred while processing the current product update request."
+    # - CODE: 6027
+    #   MESSAGE: "There are headers with the same name when creating the template."
+    # - CODE: 6028
+    #   MESSAGE: "The Product Set does not allow product creation by API."
+    # - CODE: 6029
+    #   MESSAGE: "URL provided does not return a valid image"
+    # - CODE: 6030
+    #   MESSAGE: "Product Image with invalid url."
+    # - CODE: 6031
+    #   MESSAGE: "The given Attribute Type does not have any validator."
+    # - CODE: 6032
+    #   MESSAGE: "The selected category is inactive in all countries."
+    # - CODE: 6033
+    #   MESSAGE: "Product Image download or storage failed."
+    # - CODE: 6034
+    #   MESSAGE: "Product Image dimensions validation failed."
+    # - CODE: 6035
+    #   MESSAGE: "Product Image extension is not allowed."
+
+    # - CODE: 6036
+    #   MESSAGE: "The Additional Category is equal to the Primary Category."
+
+    # - CODE: 6037
+    #   MESSAGE: "The Additional Category is not related to the Primary Category."
+
+    # - CODE: 6038
+    #   MESSAGE: "The given Attribute Type does not have any builder."
+
+    # - CODE: 6039
+    #   MESSAGE: "The Product is not GVC enabled."
+
+    # - CODE: 6040
+    #   MESSAGE: "The Product is not eligible to be synced in this country as of this moment."
+
+    # - CODE: 6041
+    #   MESSAGE: "The Product is not eligible to have status synced as of this moment."
+
+    # - CODE: 6042
+    #   MESSAGE: "The Country filters are mandatory when filtering by status."
+
+    # - CODE: 6043
+    #   MESSAGE: "The Product Set identifier (sid) was not found."
+
+    # - CODE: 6044
+    #   MESSAGE: "The Product Set cannot be GVC enabled to fetch SC product set images."
+
+    # - CODE: 6045
+    #   MESSAGE: "The Product Status cannot be updated from deleted to another status."
+
+    # - CODE: 6046
+    #   MESSAGE: "The Product Update rejected, validations failed to be fulfilled."
+
+    # - CODE: 6047
+    #   MESSAGE: "The Product Creation rejected, validations failed to be fulfilled."
+
+    # - CODE: 6048
+    #   MESSAGE: "The Product Country was restricted."
+
+    # - CODE: 6049
+    #   MESSAGE: "Product Set with different number of images."
+
+    # - CODE: 6050
+    #   MESSAGE: "Product Set image update only allowed for jumia-ng"
+
+    # - CODE: 6051
+    #   MESSAGE: "Product is not eligible to be synced due to qc status"
+
+    # - CODE: 6052
+    #   MESSAGE: "Product Initial stock value cannot be negative"
+
+    # - CODE: 6053
+    #   MESSAGE: "Please provide a valid qc status"
+
+    # - CODE: 6054
+    #   MESSAGE: "Could not retrieve Products for selected shops. Please choose other shop."
+
+    # - CODE: 6055
+    #   MESSAGE: "Date interval 'To' should not be empty."
+
+    # - CODE: 6056
+    #   MESSAGE: "Date interval 'From' should not be after 'To'."
+
+    # - CODE: 6057
+    #   MESSAGE: "Could not retrieve Product Kpi for provided product"
+
+    # - CODE: 6058
+    #   MESSAGE: "KPI was not found"
+
+    # - CODE: 6059
+    #   MESSAGE: "File has invalid type"
+
+    # - CODE: 6060
+    #   MESSAGE: "ProductSet draft not found"
+
+    # - CODE: 6061
+    #   MESSAGE: "User is authenticated but does not have permission to access."
+
+    # - CODE: 6062
+    #   MESSAGE: "ProductSet not found"
+
+    # - CODE: 6063
+    #   MESSAGE: "Products don't belong to ProductSet"
+
+    # - CODE: 6064
+    #   MESSAGE: "Please add at least one type of update flow"
+
+    # - CODE: 6065
+    #   MESSAGE: "Product set does not belong to shop"
+
+    # - CODE: 6066
+    #   MESSAGE: "Product update flow {0} is invalid"
+
+    # - CODE: 6067
+    #   MESSAGE: "The shop default currency [USD] is not convertible."
+
+    # - CODE: 6068
+    #   MESSAGE: "Only price & stock updates are allowed for this product. Please create a new product if you want to change the contents."
+    # - CODE: 6069
+    #   MESSAGE: "Product Update sale price dates must be different from each other."
+    # - CODE: 6070
+    #   MESSAGE: "ProductSet By Id Not found."
+    # - CODE: 6071
+    #   MESSAGE: "The barcode should contain digits only"
+    # - CODE: 6072
+    #   MESSAGE: "The barcode should be 8, 12, 13 or 14 digits"
+    # - CODE: 6073
+    #   MESSAGE: "The barcode is invalid"
+    # - CODE: 6074
+    #   MESSAGE: "A product with the same barcode gtin already exists for this seller."
+    # - CODE: 6075
+    #   MESSAGE: "Update on deleted products is not allowed."
+    # - CODE: 7001
+    #   MESSAGE: "An error occurred while processing the current price update request."
+    # - CODE: 7002
+    #   MESSAGE: "Price update request rejected: Missing or invalid field PRODUCT_SID."
+    # - CODE: 7003
+    #   MESSAGE: "Price update request rejected: Missing or invalid field SELLER_SKU."
+    # - CODE: 7004
+    #   MESSAGE: "The submitted currency is different from the shop default currency."
+    # - CODE: 7005
+    #   MESSAGE: "An error occurred while processing the price conversion."
+    # - CODE: 7006
+    #   MESSAGE: "User email does not have permission to change prices."
+    # - CODE: 9001
+    #   MESSAGE: "An error occurred while processing the current product status update request."
+    # - CODE: 9002
+    #   MESSAGE: "Product Status Unable to be updated."
+    # - CODE: 9003
+    #   MESSAGE: "Products  Status Unable to be updated between specified ids."
+
+    # - CODE: 8001
+    #   MESSAGE: "The user does not have access to provided master shop."
+
+    # - CODE: 8002
+    #   MESSAGE: "The user does not have access to provided shops."
+
+    # - CODE: 8003
+    #   MESSAGE: "The user does not have required roles."
+
+    # - CODE: 8004
+    #   MESSAGE: "The user is mandatory."
+
+    # - CODE: 8005
+    #   MESSAGE: "An error occurred while attempting to fetch the shop."
+
+    # - CODE: 10001
+    #   MESSAGE: "Initial price validations failed"
+
+    # - CODE: 11001
+    #   MESSAGE: "Products API Token serialization failed"
+
+    # - CODE: 11002
+    #   MESSAGE: "Products API Token decoding failed"
+
+    # - CODE: 11003
+    #   MESSAGE: "Products API Token encoding failed"
+
+    # - CODE: 11004
+    #   MESSAGE: "Products API Token is invalid"
+
+LANGUAGE_CODE_NOT_FOUND:
+  CODE: 11005
+  MESSAGE: "The Language code not found."
+
+CLIENT_COUNTRY_NOT_FOUND:
+    - CODE: 11006
+      MESSAGE: "The Business Client country was not found."
+
+TRANSLATION_ATTRIBUTE__NOT_FOUND:
+  CODE: 11007
+  MESSAGE: "Attribute translation type not found."
+
+MANDATORY_TRANSLATIONS:
+  CODE: 11008
+  MESSAGE: "English translations are mandatory for attribute description."
+
+ENDPOINT_NOT_EXISTS:
+  CODE: 12001
+  MESSAGE: "The endpoint does not exist, please check the documentation."
+
+USER_NO_PERMISSION:
+  CODE: 20001
+  MESSAGE: "User is authenticated but does not have permission to access."

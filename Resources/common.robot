@@ -18,6 +18,8 @@ Library         Libs/CustomKeywords.py
 
 Variables        apischema.yaml
 Variables        ../Data/Config/live.yml
+Variables        ../Data/common_errors.yml
+
 
 *** Variables ***
 ${VCS_BASE_URL}             https://api-vcs-staging.jumia.services/api/v2
