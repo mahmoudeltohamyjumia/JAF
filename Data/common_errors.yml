@@ -459,37 +459,45 @@ INVALID_PRODUCT_SKU:
     # - CODE: 8002
     #   MESSAGE: "The user does not have access to provided shops."
 
-    # - CODE: 8003
-    #   MESSAGE: "The user does not have required roles."
+MISSING_USER_ROLES:
+  CODE: 8003
+  MESSAGE: "The user does not have required roles."
 
-    # - CODE: 8004
-    #   MESSAGE: "The user is mandatory."
+MISSING_USER:
+  CODE: 8004
+  MESSAGE: "The user is mandatory."
 
-    # - CODE: 8005
-    #   MESSAGE: "An error occurred while attempting to fetch the shop."
+ERROR_FETCHING_SHOP:
+  CODE: 8005
+  MESSAGE: "An error occurred while attempting to fetch the shop."
 
-    # - CODE: 10001
-    #   MESSAGE: "Initial price validations failed"
+INVALID_PRICE:
+  CODE: 10001
+  MESSAGE: "Initial price validations failed"
 
-    # - CODE: 11001
-    #   MESSAGE: "Products API Token serialization failed"
+INVALID_TOKEN_SERIALIZATION:
+  CODE: 11001
+  MESSAGE: "Products API Token serialization failed"
 
-    # - CODE: 11002
-    #   MESSAGE: "Products API Token decoding failed"
+INVALID_TOKEN_DECODING:
+  CODE: 11002
+  MESSAGE: "Products API Token decoding failed"
 
-    # - CODE: 11003
-    #   MESSAGE: "Products API Token encoding failed"
+INVALID_TOKEN_ENCODING:
+  CODE: 11003
+  MESSAGE: "Products API Token encoding failed"
 
-    # - CODE: 11004
-    #   MESSAGE: "Products API Token is invalid"
+INVALID_TOKEN:
+  CODE: 11004
+  MESSAGE: "Products API Token is invalid"
 
 LANGUAGE_CODE_NOT_FOUND:
   CODE: 11005
   MESSAGE: "The Language code not found."
 
 CLIENT_COUNTRY_NOT_FOUND:
-    - CODE: 11006
-      MESSAGE: "The Business Client country was not found."
+  CODE: 11006
+  MESSAGE: "The Business Client country was not found."
 
 TRANSLATION_ATTRIBUTE__NOT_FOUND:
   CODE: 11007
