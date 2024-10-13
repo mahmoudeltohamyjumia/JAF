@@ -6,18 +6,18 @@ Library         BuiltIn
 Library         RequestsLibrary
 Library         OperatingSystem
 Library         FakerLibrary
-Library         SeleniumLibrary    timeout=60
+Library         SeleniumLibrary    timeout=60    run_on_failure=None
 Library         String
 Library         json
 Library         JSONLibrary
 Library         Process
+###################   Custom Libs  ###########################################
 Library         Libs/SchemaLibrary.py    Resources/schemas/
 Library         Libs/CustomKeywords.py
-
-
+Library         Libs/AxeLibrary.py
+###############################################################################
 
 Variables        apischema.yaml
-Variables        ../Data/Config/live.yml
 Variables        ../Data/common_errors.yml
 
 

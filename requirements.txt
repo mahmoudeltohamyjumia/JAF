@@ -12,6 +12,7 @@ reportlab
 matplotlib
 setuptools
 pytablewriter
+axe_selenium_python
 robotframework-faker
 robotframework-browser
 robotframework-requests

@@ -108,8 +108,10 @@ BRAND_NAME_NON_COMPLIANT:
   CODE: 2005
   MESSAGE: "The brand name is not compliant according to the naming policy."
 
-    # - CODE: 2006
-    #   MESSAGE: "The Brand with this name already exists (Brand name are case and accent insensitive). If you can not find it, please try with or without accents."
+BRAND_NAME_ALREADY_EXISTS:
+  CODE: 2006
+  MESSAGE: "The Brand with this name already exists (Brand name are case and accent insensitive). If you can not find it, please try with or without accents."
+
     # - CODE: 2007
     #   MESSAGE: "The brand status cannot be updated without a valid translation."
     # - CODE: 2008

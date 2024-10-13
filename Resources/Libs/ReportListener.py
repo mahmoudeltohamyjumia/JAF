@@ -1,22 +1,48 @@
-from io import StringIO
-# ToDo: enhance the report, use jinja and extract test data
-class ReportListener:
-    ROBOT_LISTENER_API_VERSION = 3
+from robot.api import ResultVisitor
+from robot.utils.markuputils import html_format
+from robot.api import logger
+
+
+class SuiteResults(ResultVisitor):
 
     def __init__(self):
-        # Use StringIO to capture output in memory
-        self.output = StringIO()
-        self.output.write("<!DOCTYPE html><html><head><title>VCs Automation Report</title></head><body><table>")
-        self.output.write("<tr><th>Test</th><th>Status</th></tr>")
+        self.suite_list = []
+        self.test_list = []
+    
+    def visit_test(self, test):
+        test_json = {
+            "Suite Name" : test.parent.name,
+            "Test Name" : test.name,
+            "Test Id" : test.id,
+            "Status" : test.status,
+            "Documentation" : html_format(test.doc),
+            "Time" : test.elapsedtime,
+            "Message" : html_format(test.message),
+            "Tags" : test.tags
+        }
+        self.test_list.append(test_json)
 
-    def close(self):
-        self.output.write("</table></body></html>")
-        # Access the HTML content as a string
-        html_content = self.output.getvalue()
-        # Now you can write it to a file or return it directly
-        with open('compliance-report.html', 'w') as f:
-            f.write(html_content)
+    def start_suite(self, suite):
+        if suite.tests:
+            try:
+                stats = suite.statistics.all
+            except:
+                stats = suite.statistics
+            
+            try:
+                skipped = stats.skipped
+            except:
+                skipped = 0
 
-    def end_test(self, data, result):
-        self.output.write(f"<tr><td>{result.name}</td><td>{result.status}</td></tr>")
-
+            suite_json = {
+                "Name" : suite.longname,
+                "Id" : suite.id,
+                "Status" : suite.status,
+                "Documentation" : html_format(suite.doc),
+                "Total" : stats.total,
+                "Pass" : stats.passed,
+                "Fail" : stats.failed,
+                "Skip" : skipped,
+                "Time" : suite.elapsedtime,
+            }
+            self.suite_list.append(suite_json)
