@@ -1,0 +1,5 @@
+{% if businessClientCode %}businessClientCode:{{ businessClientCode | default("jumia-ma", true) }}{% endif %}
+{% if sellerSku %}sellerSku:{{ sellerSku }}{% endif %}
+{% if page %}page:{{ page }}{% endif %}
+{% if size %}size:{{ size }}{% endif %}
+{% if sort %}sort:{{ sort }}{% endif %}

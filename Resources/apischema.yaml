@@ -6,24 +6,22 @@ APIs:
         bodyTemplate: none.template
         params: totalPendingLastSevenDaysParams.template
         headers: totalPendingLastSevenDaysHeaders.template
-        uri: https://api-vcs-staging.jumia.services/api/v2/orders/total-pending-last-seven-days
+        uri: /orders/total-pending-last-seven-days
 
         Responses:
           'Pass': totalPendingLastSevenDays.schema.json
-          'Failed': Resources/schemas/genericError.schema.json
+          'Failed': genericError.schema.json
 
 
-  uvr:
-    UserController:
-      login:
-        action: post
-        bodyTemplate: login.template
-        params: totalPendingLastSevenDaysParams.template
-        headers: totalPendingLastSevenDaysHeaders.template
-        uri: https://api-uvr-staging.jumia.services/api/v2/api/v2/users/login/{provider}
+  consignment:
+    consignmentOrderRetrievalController:
+      ConsignmentOrderStocksUsingGET:
+        action: get
+        bodyTemplate: none.template
+        params: GetConsignmentOrderStocksParams.template
+        headers: GetConsignmentOrderStocksHeaders.template
+        uri: /consignment-order/{{shopSid}}/products/stock
 
         Responses:
-          'Pass': totalPendingLastSevenDays.schema.json
-          'Failed': Resources/schemas/genericError.schema.json
-
-
+          'Pass': consignmentProductStock.schema.json
+          'Failed': genericError.schema.json

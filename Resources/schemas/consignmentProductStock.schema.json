@@ -1,0 +1,161 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "totalPages": {
+            "type": "integer"
+        },
+        "totalElements": {
+            "type": "integer"
+        },
+        "first": {
+            "type": "boolean"
+        },
+        "last": {
+            "type": "boolean"
+        },
+        "number": {
+            "type": "integer"
+        },
+        "sort": {
+            "type": "object",
+            "properties": {
+                "sorted": {
+                    "type": "boolean"
+                },
+                "unsorted": {
+                    "type": "boolean"
+                },
+                "empty": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "sorted",
+                "unsorted",
+                "empty"
+            ]
+        },
+        "pageable": {
+            "type": "object",
+            "properties": {
+                "paged": {
+                    "type": "boolean"
+                },
+                "unpaged": {
+                    "type": "boolean"
+                },
+                "sort": {
+                    "type": "object",
+                    "properties": {
+                        "sorted": {
+                            "type": "boolean"
+                        },
+                        "unsorted": {
+                            "type": "boolean"
+                        },
+                        "empty": {
+                            "type": "boolean"
+                        }
+                    },
+                    "required": [
+                        "sorted",
+                        "unsorted",
+                        "empty"
+                    ]
+                },
+                "pageNumber": {
+                    "type": "integer"
+                },
+                "pageSize": {
+                    "type": "integer"
+                },
+                "offset": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "paged",
+                "unpaged",
+                "sort",
+                "pageNumber",
+                "pageSize",
+                "offset"
+            ]
+        },
+        "numberOfElements": {
+            "type": "integer"
+        },
+        "size": {
+            "type": "integer"
+        },
+        "content": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "sid": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "sku": {
+                            "type": "string"
+                        },
+                        "businessClient": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "code": {
+                                    "type": "string"
+                                },
+                                "countryCode": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "code",
+                                "countryCode"
+                            ]
+                        },
+                        "availableUnits": {
+                            "type": "integer"
+                        },
+                        "reservedUnits": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "sid",
+                        "name",
+                        "sku",
+                        "businessClient",
+                        "availableUnits",
+                        "reservedUnits"
+                    ]
+                }
+            ]
+        },
+        "empty": {
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "totalPages",
+        "totalElements",
+        "first",
+        "last",
+        "number",
+        "sort",
+        "pageable",
+        "numberOfElements",
+        "size",
+        "content",
+        "empty"
+    ]
+}

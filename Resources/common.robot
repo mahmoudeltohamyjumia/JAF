@@ -19,13 +19,14 @@ Library         Libs/AxeLibrary.py
 
 Variables        apischema.yaml
 Variables        ../Data/common_errors.yml
-
+Variables        ../Data/Config/staging_data.yml
 
 *** Variables ***
 ${VCS_BASE_URL}             https://api-vcs-staging.jumia.services/api/v2
 ${UVR_BASE_URL}             https://api-uvr-staging.jumia.services/api/v2
+# ${CON_BASE_URL}             https://api-consignment-staging.jumia.services/api/v2
 
-
+${CON_BASE_URL}             http://api-consignment-staging.jumia.services/api
 
 
 ${GLOBALTIMEOUT}            200 ms
@@ -82,7 +83,7 @@ Render file dictionary
     RETURN    ${files}
 
 Api call
-    [Arguments]    ${apiname}    &{params}
+    [Arguments]    ${baseurl}    ${apiname}    ${status}    &{params}
     ${descriptor}    Set Variable    ${APIs.${apiname}}
     ${template}    Get File    ./Resources/templates/body/${descriptor.bodyTemplate}
     &{reqparams}    Create Dictionary    &{params}
@@ -126,21 +127,23 @@ Api call
         &{files}    Set Variable    ${None}
     END
     # =====================================
+    Create Session    mytest    ${baseurl}
+    # ======================================
     IF    "${action}"=="post"
-        ${response}    Post    url=${uri}    headers=${reqheaders}    data=${body}    files=${files}
+        ${response}=    Post On Session  alias=mytest  url=${uri}    headers=${reqheaders}    data=${body}    files=${files}
     ELSE IF    "${action}"=="get"
-        ${response}    Get    url=${uri}    headers=${reqheaders}    params=${qryparams}
+        ${response}=    GET On Session  alias=mytest  url=${uri}    headers=${reqheaders}    expected_status=${status}    params=${qryparams}
     ELSE IF    "${action}"=="put"
-        ${response}    Put    url=${uri}    headers=${reqheaders}    data=${body}
+        ${response}=    Put On Session  alias=mytest  headers=${reqheaders}    data=${body}
     ELSE IF    "${action}"=="delete"
-        ${response}    Delete    url=${uri}    headers=${reqheaders}    params=${qryparams}
+        ${response}=    Delete On Session  alias=mytest  headers=${reqheaders}    params=${qryparams}
     ELSE IF    "${action}"=="patch"
-        ${response}    Patch    url=${uri}    headers=${reqheaders}    data=${body}
+        ${response}=    Patch On Session  alias=mytest  url=${uri}    headers=${reqheaders}    data=${body}
     ELSE
         ${response}    Set Variable    ${None}
     END
     sleep    ${GLOBALTIMEOUT}
-    Convert To Curl    ${response}
+    # Convert To Curl    ${response}
     RETURN    ${response}
 
 Assert API response schema
