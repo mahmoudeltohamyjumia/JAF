@@ -143,7 +143,7 @@ Api call
         ${response}    Set Variable    ${None}
     END
     sleep    ${GLOBALTIMEOUT}
-    # Convert To Curl    ${response}
+    Convert To Curl    ${response}
     RETURN    ${response}
 
 Assert API response schema

@@ -2,6 +2,7 @@
 Documentation     test suite
 Force Tags       BID-REQ-002
 Resource         ../../../../Resources/common.robot
+
 *** Variables ***
 
 
