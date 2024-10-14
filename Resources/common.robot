@@ -23,7 +23,7 @@ Variables        ../Data/common_errors.yml
 
 *** Variables ***
 ${VCS_BASE_URL}             https://api-vcs-staging.jumia.services/api/v2
-# ${UVR_BASE_URL}             https://api-uvr-staging.jumia.services/api/v2
+${UVR_BASE_URL}             https://api-uvr-staging.jumia.services/api/v2
 
 
 
