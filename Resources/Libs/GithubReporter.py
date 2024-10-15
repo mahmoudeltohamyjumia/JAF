@@ -24,8 +24,8 @@ def main():
     stats = result.statistics
     f.write("```mermaid\n")
     f.write(
-            "%%{init: {'theme': 'base', 'themeVariables': { 'passed': '#00FF00', 'failed': '#FF0000', 'skipped': '#FFFF00'}}}%%\n"
-        )
+        "%%{init: {'theme': 'base', 'themeVariables': { 'passed': 'rgb(0, 255, 0)', 'failed': 'rgb(255, 0, 0)', 'skipped': 'rgb(255, 255, 0)'}}}%%\n"
+    )
     f.write("pie title Test Status\n")
     f.write(f'    "Passed" : {stats.total.passed}\n')
     f.write(f'    "Failed" : {stats.total.failed}\n')
