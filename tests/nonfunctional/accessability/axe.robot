@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource         ../../../../Resources/common.robot
+Resource         ../../../Resources/common.robot
 *** Test Cases ***
 Google Accessibility Test
     #[Tags]    robot:skip
