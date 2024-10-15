@@ -11,18 +11,7 @@ the overall test architecture is explained in the conf page.
 
 a) Directory structure of our current Templates
 
-   ./
 
-	|__config: For all configurations and credential files (will be moved later).
-	|__data: all referenced data for the whole project.
-	|__Docs: documentation for the Virtual Numbers project.
-	|__infra: all docker services and farm setups
-    	|__docker: folder containing docker file for running API tests (will be moved later).
-        |__jenkins: folder containing groovy scripts for running tests.
-	|__Resources: Contains our Base Page, different Page Objects, DriverFactory, PageFactory.
-    	|__schemas: json schema for assertions (will be moved later).
-    	|__templates: jinja templates for rendering data objects (will be moved later).
-	|__TestCases: all alias robot-framework tests are placed there.
 
 ## Continuous Testing
 
